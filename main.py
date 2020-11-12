@@ -67,25 +67,26 @@ while userChoice != 6:
                 print('База пустая! Не можем искать!')
 
         elif userChoice == 5:
-            def sort(list):
-                if len(list) != 0:
-                    print('Список до:', list)
+            def sort(array):
+                if len(array) != 0:
+                    print('Список до:', array)
                     swapped = False
 
                     while swapped is False:
-                        for index in range(len(list)-1, 0, -1):
+                        for index in range(len(array)-1, 0, -1):
                             for i in range(index):
                                 # если values[i] > values[i+1], поменять их местами
-                                if list[i] > list[i+1]:
-                                    list[i], list[i+1] = list[i+1], list[i]
-                        return list
+                                if array[i] > array[i+1]:
+                                    array[i], array[i+1] = array[i+1], array[i]
+                        return array
 
 
 
                 else:
                     print('База пуста!')
 
-        print('Список после:' + str(sort(values)))
+            result = sort(values)
+            print('Список после:' + str(result))
 
 
 
