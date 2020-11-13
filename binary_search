@@ -1,0 +1,33 @@
+d = [16, 22, 5, 6, 9, 12, 1, 19, 2, 25, 30]
+d = sorted(d)
+print(d)
+
+
+
+
+
+#// - целочисленное деление
+#len - длина списка(массива, листа)
+#def - объект принимающий аргументы и возвращающий значения
+#lower_bound - нижняя граница поиска
+#upper_bound - верхняя граница поиска
+#array - аргумент, обозначающий список
+#key - аргумент, обозначающий то что вам нужно найти
+
+def binary_search(array, key):
+    lower_bound = 0
+    upper_bound = len(array) - 1
+
+    while lower_bound <= upper_bound:
+        center = (lower_bound + upper_bound) // 2
+
+        if array[center] == key:
+            return center
+        elif array[center] > key:
+            upper_bound = center - 1
+        elif array[center] < key:
+            lower_bound = center + 1
+
+    return 'not found'
+
+print(binary_search(d, 3))
