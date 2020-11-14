@@ -47,15 +47,15 @@ while userchoise != 4:
                     print(div(a, b))
                 elif b == 0:
                     print('Значения не могут быть поделены.')
-                    print('Введите значение а:')
-                    a = int(input())
-                    print('Введите значение b:')
-                    b = int(input())
+
 
 
             elif a == -999999999 and b == -9999999999:
                 print('Значения не введены, введите значения.')
-
+                print('Введите значение а:')
+                a = int(input())
+                print('Введите значение b:')
+                b = int(input())
 
         print('\n Меню')
         print('1. Ввести значения a и b')
