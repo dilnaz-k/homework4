@@ -1,0 +1,74 @@
+# Создать функции push() и pop() для очереди, проверить корректность работы программы добавив и удалив несколько
+#    значений.
+# 2. Реализовать приоритетный push(): ветераны и обычные граждане путем доработки существующих функций.
+# 3. Переделать pop() таким образом, чтобы после 3-х приоритетных объектов, "вытащить" 1 не приоритетный
+
+userChoice = 0
+queue = [['park', 'jeon', 'pou'], 'li', 'kim']
+
+print('\nМеню:')
+print('1. Добавить безльготную категории')
+print('2. Добавить льготную категорию')
+print('3. Удалить из очереди')
+print('4. Удалить льготную категорию')
+print('5. Выйти')
+print('Введите опцию:')
+
+userChoice = int(input())
+
+while userChoice != 5:
+    if (userChoice < 1) | (userChoice > 5):
+        print('Такой опции нет, выберите существующую опцию.')
+        userChoice = int(input())
+    else:
+        if userChoice == 1:
+            def push(array, human):
+                array.append(human)
+                print(array)
+
+                return (str(human) + ' был успешно добавлен')
+
+
+            a = str(input('Введите имя:'))
+            print(push(queue, a))
+        elif userChoice == 2:
+            def push2(array, human):
+                i = 0
+                j = 0
+                for i in range(len(array)):
+                    for j in range(len(array[i])):
+                        array[i].append(human)
+                        print(array)
+                        return (str(human) + ' был успешно добавлен')
+
+
+            b = str(input('Введите имя:'))
+            print(push2(queue, b))
+
+        elif userChoice == 3:
+            def pop(array):
+                people = str(input('Введите имя:'))
+                array.remove(people)
+
+
+
+                return array
+
+
+            print(pop(queue))
+
+        elif userChoice == 4:
+            def pop2(array):
+                people2 = str(input('Введите имя:'))
+                array[0].remove(people2)
+
+                return array
+
+            print(pop2(queue))
+        print('1. Добавить безльготную категории')
+        print('2. Добавить льготную категорию')
+        print('3. Удалить из очереди')
+        print('4. Удалить льготную категорию')
+        print('5. Выйти')
+        print('Введите опцию:')
+        userChoice = int(input())
