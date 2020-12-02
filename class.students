@@ -1,0 +1,34 @@
+students = []
+
+
+class Student():
+    def __init__(this, surname, name, age, course,group):
+        this.surname = surname
+        this.name = name
+        this.age = age
+        this.course = course
+        this.group = group
+        if age < 15:
+            print('Возраст не соотвествует')
+            this.age = int(input("Введите верный возраст:"))
+        if course > 5:
+            print('Курс введен не верно')
+            this.course = int(input('Введите курс верно:'))
+
+
+
+    def StudentData(this):
+        return 'Фамилия: ' + this.surname,'Имя:' + this.name, 'Возраст: ' + str(this.age),'Курс: ' + str(this.course),'Группа: ' + this.group
+
+student1 = Student('Кубашева', 'Дильназ', 18, 2, 'АиУ-19 р/о')
+student2 = Student("Каймулдиев", "Данияр", 18, 2, "АиУ-19 р/о")
+student3 = Student("Болатов", "Парвиз", 18, 2, "АиУ-19 р/о")
+
+choice = str(input('Напишите "stop" для остановки ввода учащихся. В случае продолжения введите "next":'))
+while choice != 'stop':
+    student4 = Student(str(input('Введите фамилию: ')), str(input('Введите имя: ')), int(input('Введите ваш возраст: ')),
+                    int(input("Введите номер курса: ")), str(input("Введите название группы: ")))
+    print(student4.StudentData())
+    students.append(student4.StudentData())
+    choice = str(input('Напишите "stop" для остановки ввода учащихся. В случае продолжения введите "next":'))
+print(students)
